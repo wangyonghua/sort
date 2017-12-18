@@ -18,8 +18,14 @@ public class LowestAncestor {
 
         //先遍历左右子树，左右子树的返回为left和right；然后判断left和right请情况
         Node left = getLowestAncestor(head.left, n1, n2);
-        Node right = getLowestAncestor(head.right, n1, n2);
+        if (left != null) {
+            System.out.println("left:" + left.value);
+        }
 
+        Node right = getLowestAncestor(head.right, n1, n2);
+        if (right != null) {
+            System.out.println("right:" + right.value);
+        }
 
         /*左和右都不为null---说明在左子树中发现过n1或n2，
          * 在右子树上也发现过n1或n2，并且n1和n2在当前节点首次相遇
@@ -62,7 +68,7 @@ public class LowestAncestor {
         node5.left = node7;
 
         LowestAncestor lowestAncestor = new LowestAncestor();
-        Node lowestAncestor1 = lowestAncestor.getLowestAncestor(node, node3, node5);
+        Node lowestAncestor1 = lowestAncestor.getLowestAncestor(node, node2, node3);
         System.out.println(lowestAncestor1.value);
     }
 }

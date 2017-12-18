@@ -1,5 +1,8 @@
 package com.sort.types;
 
+/*
+    快速排序
+ */
 public class QuickSort {
     public static void quickSort(int[] a, int low, int high) {
         if (low < high) {
